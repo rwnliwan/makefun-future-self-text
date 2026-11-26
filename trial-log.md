@@ -57,3 +57,15 @@
   and check v1 numbers, written after the first check ran).
 - Re-bundle v2 + re-check v2 follow this revision; target 13/1
   (only thinking_priced left, for the coordinator).
+- Bundle v2: `bundle-10-v2.tar.gz`, 206,256 bytes, sha256
+  `543c68e5608f8208ad9dcb06ca8a868b984a49cf23305fa6b0b0f125dcf5f344`
+  (from commit `c21be93a3b7cd76a9e1c8e8561ec35375bb4038c`, same flags).
+- Check v2: **13 passed, 1 failed, 5 skipped, 5 checked at submission.**
+  `thinking_revised` now PASSES (trial-log.md from 2 messages);
+  `thinking_reproduces` 80/82 lines (97.5%); only `thinking_priced`
+  still fails (0 usage rows — coordinator re-bundle with muse.db row).
+  Target state reached: 13/1, submit-ready pending coordinator re-bundle
+  + GitHub repo create (rate-limited at first try, see below).
+- GitHub repo create: first attempt 26 Nov ~09:03 WITA refused
+  `GraphQL: You have created too many repositories, too quickly`
+  (rolling rate limit — known batch pattern, retry after a long pause).
