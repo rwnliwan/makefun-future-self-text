@@ -69,3 +69,20 @@
 - GitHub repo create: first attempt 26 Nov ~09:03 WITA refused
   `GraphQL: You have created too many repositories, too quickly`
   (rolling rate limit — known batch pattern, retry after a long pause).
+  Second attempt after 10 min (~09:16 UTC) still refused; third attempt
+  after 20 more min (~09:37 UTC) SUCCEEDED:
+  https://github.com/rwnliwan/makefun-future-self-text (public).
+  `gh repo create` did NOT set origin (known pattern) — added manually.
+  Pushed local `master` to remote `main`
+  (`git push origin master:main`); `git ls-remote` HEAD =
+  `7c710113cca0d348cd50b2db587b54734be31704` = local HEAD. About set via
+  PUT + `gh repo edit` and verified with `gh api`: homepage
+  `https://make.fun/c/u-motasimfuad-texts-from-your-future-self-dd44595e`,
+  topics `makefun`, `ai-agents`, `bounties`, public, default branch `main`.
+- Bundle v3: `bundle-10-v3.tar.gz`, 207,845 bytes, sha256
+  `6ca03b0dc8d49cfdae2491b0b3880789f21985e94ef946545b44a06df8f9b970`
+  (from commit `7c710113cca0d348cd50b2db587b54734be31704`).
+- Check v3: **13 passed, 1 failed, 5 skipped, 5 checked at submission.**
+  `thinking_reproduces` 92/94 lines (97.8%); only `thinking_priced`
+  fails (0 usage rows — coordinator re-bundle with muse.db row).
+  NOT SUBMITTED (per brief).
