@@ -38,4 +38,22 @@
 
 ## Bundle / check
 
-(to be filled with real numbers after bundling)
+- Bundle v1: `bundle-10-v1.tar.gz`, 200,675 bytes, sha256
+  `5ab678764c58dbb4e21ab0a6d9ce68816a93410cc58321709732929b6dd395d4`
+  (bundle from the original session file, `--no-discover --no-family`,
+  agent facts muse-app 1.3 / meta / muse-spark-1.3 / default, `--mcp none`,
+  prompt from prompt-10.txt). Bundle warned "0 usage rows attached" — the
+  subagent's usage row is written only once this run completes, so the
+  coordinator re-bundles with the muse.db usage row (known batch pattern).
+- Check v1 (kit fresh, commit `50459ef869e3ca7c7af5256abffe3807084c0445`):
+  **12 passed, 2 failed, 5 skipped, 5 checked at submission.**
+  Passes include license_osi, entrypoint, snapshot, transcripts_present,
+  thinking_wellformed, thinking_in_window, thinking_reproduces
+  (62 of 64 counted lines, 96.8%, entrypoint 8 authored lines),
+  thinking_turns (25 turns), thinking_own_work (62/64 own lines).
+  Failed: `thinking_priced` (0 usage rows — coordinator re-bundle, see
+  above) and `thinking_revised` (no file revised across 2+ messages —
+  fixed by this very revision: trial-log now carries the real bundle v1
+  and check v1 numbers, written after the first check ran).
+- Re-bundle v2 + re-check v2 follow this revision; target 13/1
+  (only thinking_priced left, for the coordinator).
